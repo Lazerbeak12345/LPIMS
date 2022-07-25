@@ -1,3 +1,4 @@
+// use lpims::arguments::Arguments;
 fn main() {
-    println!("Hello, world!");
+    todo!("parse arguments")
 }
