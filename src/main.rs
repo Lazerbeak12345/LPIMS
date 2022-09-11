@@ -1,5 +1,6 @@
 use lpims::arguments::Args;
 use clap::Parser;
+use std::path::PathBuf;
 
 fn get_token_stream() {
     todo!("Stream token sequence from input file");
@@ -41,14 +42,14 @@ fn generate_output() {
     todo!("collect LLVM compile flags (and other metadata)");
     todo!("run llvm on the tree")
 }
-fn get_file() {
+fn get_file(path:PathBuf) {
     todo!("load or stream input file")
 }
 
 fn main() {
     let args = Args::parse();
     println!("Input file {}", args.path.display());
-    get_file();
+    get_file(args.path);
     // todo shabang to specify base-language.
     get_token_stream();
     get_streaming_parse_tree();
