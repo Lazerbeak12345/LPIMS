@@ -4,7 +4,7 @@ use lpims::{
     parse::get_streaming_parse_tree
 };
 use clap::Parser;
-use std::path::PathBuf;
+use std::{path::PathBuf,fs::File};
 
 fn generate_output() {
     todo!("generate output");
@@ -12,8 +12,11 @@ fn generate_output() {
     todo!("collect LLVM compile flags (and other metadata)");
     todo!("run llvm on the tree")
 }
-fn get_file(path:PathBuf) {
-    todo!("load or stream input file")
+fn get_file(path:PathBuf) -> File {
+    match File::open(&path) {
+        Ok(file) => file,
+        Err(msg) => panic!("{} : {}", path.display(), msg)
+    }
 }
 
 fn main() {
