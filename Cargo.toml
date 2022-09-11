@@ -8,4 +8,6 @@ edition = "2021"
 [dependencies]
 # https://docs.rs/regex/1/regex/
 regex = "1"
+# Argument parser
 clap = { version = "3.2", features = ["derive"] }
+async-stream = "0.3.3"
